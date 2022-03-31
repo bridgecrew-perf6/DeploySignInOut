@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
+    /* background-color: #EEA47FFF; */
+}
+
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/* aside */
+
+aside{
+    width: 20%;
+    background-color: navy;
+    height: 100%;
+    padding: 1rem 2rem;
+    justify-self: left;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainIdentification{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 2.5rem 0;
+}
+.profileIcon{
+    width: 70px;
+    object-fit: contain;
+}
+.id{
+    color: aliceblue;
+    font-weight: 500;
+    margin: 5px 0;
+}
+.id:first-child{
+    font-weight: bold;
+}
+
+hr{
+    width: 70%;
+    opacity: 0.7;
+    
+}
+
+.navigationBar{
+    padding-top: 4rem;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.addBtn{
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* main Classes */
+
+.main{
+    padding: 2rem;
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 6rem;
+}
+
+.classes{
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr ;
+    overflow-y: auto;
+    height: 190px;
+    width: 100%;
+}
+
+.class{
+    height: 150px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: navy;
+    -webkit-box-shadow: 4px 4px 12px -1px #000000; 
+    box-shadow: 4px 4px 12px -1px #000000;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.topicClass{
+    text-align: center;
+    padding-top: 2rem;
+    color: aliceblue;
+}
+
+.reportCart{
+    margin: 0 6rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: fit-content;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 5fr;
+    gap: 7rem;
+}
+
+.iconContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.iconStates{
+    width: 50px;
+    object-fit: cover;
+}
+
+.reservations{
+    max-height: fit-content;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.table{
+    width: 100%;
+    text-align: left;
+    padding: 10px 5px;
+    font-size: 1.25rem
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+
+tr{
+    height: 2rem;
+}
+
+th{
+    font-weight: bold;
+    font-size: 1.5rem;
+}

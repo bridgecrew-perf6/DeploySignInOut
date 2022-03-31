@@ -1,0 +1,20 @@
+*{
+    padding: 0px;
+    margin: 0;
+}
+.classTitle{
+    padding-left: 2rem;
+}
+.okIcons, .notOkIcons{
+    padding: 0;
+    width: 20px;
+}
+.baseElements{
+    font-size: 1.65rem;
+}
+tr{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 500;
+}
+
