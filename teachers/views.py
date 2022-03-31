@@ -13,16 +13,10 @@ def signup(request):
         username = request.POST.get('unsername')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        try:
-            User.objects.filter(email = email).first()
-            messages.info(request, "There is another account with same username or email")
-            return redirect('signup')
-        except:
-            teachers = User.objects.create_user(username, email, password)
-            teachers.save()
-            messages.info(request, "You have signed up successfully")
-            return redirect('signin')
-
+        teachers = User.objects.create_user(username, email, password)
+        teachers.save()
+        messages.info(request, "You have signed up successfully")
+        return redirect('signin')
     else:
         return render(request, 'teachers/signup.html')
 
