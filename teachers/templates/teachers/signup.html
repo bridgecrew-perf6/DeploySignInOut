@@ -14,7 +14,8 @@
             <p style="display: none;" id="message">{{message}}</p>
         {% endfor %}
     {% endif %}
-        <form action="" method="post" class="registerForm" id="signupForm"> {% csrf_token %}
+        <form action="" method="post" class="registerForm" id="signupForm"> 
+            {% csrf_token %}
             <h1 class="register">Sign-Up</h1>
             <input type="text" class="userName" id="username" name="unsername" placeholder="Username" required>
             <input type="email" class="email" id="email" name="email" placeholder="Email" required>
