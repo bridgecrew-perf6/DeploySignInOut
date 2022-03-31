@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'teachers/css/form.css' %}">
+
+</head>
+<body onload="setSavedItems()">
+        <form action="" method="post" class="form-signin">{% csrf_token %}
+            <div class="top">
+                <h2 class="topic">Equipment Sign OUT <span class="MrC" style="font-size: 1rem; color: rgba(0, 0, 0, 0.521);">({{username}}'s class)</span></h2>
+                <p>Please fill this form out to take equipment out </p>
+                <span id="required" style="color: red; margin-bottom: 10px;">Required *</span>
+            </div>
+
+            <div class="element-container" id="container1">
+                <div class="each-container">
+                    <label>Name<span style="color: red; font-size: 18px; margin-left: 5px;">*</span></label>
+                    <input autocomplete="autocomplete_off_hack_xfr4!k" type="text" name="nameOfSubmissioner" id="nameOfSubmissioner" onBlur="saveName()" required>    
+                </div>
+                <div class="each-container">
+                    <label >Period <span style="color: red; font-size: 18px; margin-left: 5px;">*</span></label>
+                    <input autocomplete="autocomplete_off_hack_xfr4!k" type="number" min="1" max="4" name="period" id="period" style="width: 70%;" onblur="savePeriod()" required>
+                </div>
+            </div> 
+        
+            <div class="element-container2">
+                <div class="each-container">
+                    <label >Group Members <span style="color: red; font-size: 18px; margin-left: 5px;">*</span></label>
+                    <input autocomplete="autocomplete_off_hack_xfr4!k" type="text" name="groupMembers" onblur="saveGroupMemebers()" id="groupMembers" required>        
+                </div>
+
+            </div>
+        
+            {% for key, value in form.items %} 
+                {% if value|length == 0 %}
+                    <div class="element-container">
+                        <div class="each-container">
+                            <label>{{key}}</label>
+                            <input type="number" name={{key}} min="0" />    
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="element-container">
+                        <div class="each-container">
+                            <select class="option" name={{key}}>
+                                <option value="">{{key}}</option>
+                                {% for each in value %}
+                                    <option value={{each}}>{{each}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    {% endif %}
+            {% endfor %}
+            <button id="submitBtn" type="submit">Submit</button>
+        </form>
+        <script src="../../static/teachers/js/localStorageManager.js"></script>
+</body>
+</html>

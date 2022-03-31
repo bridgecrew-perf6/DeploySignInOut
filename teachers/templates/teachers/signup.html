@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'teachers/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <p style="display: none;" id="message">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+        <form action="" method="post" class="registerForm" id="signupForm"> {% csrf_token %}
+            <h1 class="register">Sign-Up</h1>
+            <input type="text" class="userName" id="username" name="unsername" placeholder="Username" required>
+            <input type="email" class="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" class="password" id="firstpassword" name="password" placeholder="password" required>
+            <button type="submit" class="submitBtn">Submit</button>
+            <a id="linkToSignin" href="/">have an aaccount?</a>
+        </form>
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="../../static/teachers/js/notification.js"></script>
+</html>

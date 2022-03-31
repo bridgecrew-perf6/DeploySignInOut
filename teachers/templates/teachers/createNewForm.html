@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'teachers/css/createNewForm.css' %}">
+    <script src="{% static 'teachers/js/addButtonFunctionality.js' %}"></script>   
+
+</head>
+<body>
+    {% if user.is_authenticated %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <p style="display: none;" id="message">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+
+    <div id="mainContainer">
+        <form action="" method="post" id="container">
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: min-content; gap: 2rem;">
+                <button type="button" class="add" onclick= "addInput()">Add Input</button>
+                <button type="button" class="addOptions" onclick= "addOptions()">Add Option</button>
+            </div>
+            {% csrf_token %}
+            <div id="inputsContainer">{% csrf_token %}</div>
+            
+            <div style="display: flex; justify-content: space-around; align-items: center; width: 100%; margin: 2rem 0;">
+                <button id="submit" type="submit">Create</button>
+            </div>
+        </form>
+        {{allDataRecived}}
+    </div>
+    {% else %}
+    {% endif %}
+</body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script type="text/javascript" src="../../static/teachers/js/notification.js"></script>
+
+</html>

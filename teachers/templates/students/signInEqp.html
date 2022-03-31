@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'teachers/css/formOut.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+        <p style="display: none;" id="message">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="post" class="form-signout">
+        <div class="top">
+            <h2 class="topic">Equipment Sign IN <span class="MrC" style="font-size: 1rem; color: rgba(0, 0, 0, 0.521);"></span></h2>
+            <p>For Name-ID please enter your name and student ID (without space)</p>
+            <span id="required" style="color: red; margin-bottom: 10px;">Required *</span>
+        </div>
+        {% csrf_token %}
+        <div class="element-container">
+            <input id="inputOut" type="text" name="checkNameOfSubmissioner" placeholder="Name-ID" id="checkNameOfSubmissioner"/>
+            <input id="inputOut" type="number" name="recivedPeriod" placeholder="Period" id="recivedPeriod" max="4" min="1"/>
+        </div>
+        <button type="submit" class="submitBtn">Submit</button>
+    </form>
+
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="../../static/teachers/js/localStorageManager_Signout.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script type="text/javascript" src="../../static/teachers/js/notification.js"></script>
+
+</html>

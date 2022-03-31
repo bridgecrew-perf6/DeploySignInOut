@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+body, html{
+    overflow-x: hidden;
+}  
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: -webkit-linear-gradient(360deg, #03b964cb 10%, #828485 360%);
+}
+.form-signin{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.6rem;
+    margin-top: 24px;
+}
+
+.top{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    page-break-inside: avoid;
+}
+
+.element-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 1.5rem 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    page-break-inside: avoid;
+}
+.element-container2{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    padding: 1.5rem 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    page-break-inside: avoid;
+}
+
+.each-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.element-container>input, .each-container>input, .option{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    transform: all 0.4s;
+    width: 85%;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    color: #202124;
+    display: flex;
+    align-items: center;
+}
+
+
+.each-container>input:focus, .option:focus{
+    outline: none;
+    border-bottom: 1.5px solid green;
+}
+
+.redstart{
+    color: red;
+    font: 24px;
+}
+.chooseInput{
+    border-radius: 4px;
+    padding: 8px;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .2px;
+    line-height: 20px;
+    width: fit-content;
+    border: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.692);
+    -webkit-appearance:none;
+    -moz-appearance: none; 
+}
+
+label{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.chooseInput:focus{
+    color: black;
+    outline: none;
+    outline-width: 0;
+
+}
+.topic, p {
+    font-family: 'Google Sans', Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    color: #202124;
+}
+#submitBtn{
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(20, 139, 4);
+    color: #ffff;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 2px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 125px;
+    -webkit-box-shadow: 7px 10px 14px -7px rgba(0,0,0,0.86); 
+    box-shadow: 7px 10px 14px -7px rgba(0,0,0,0.86);
+    margin-bottom: 2rem;
+}
+#submitBtn:hover, #submitBtn:focus{
+    background: white;
+    color: black;
+    border-color: black;
+    
+}
+
+
+@media (max-width: 768px){
+    .form-signin{
+        width: 75%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 560px){
+    label{
+        font-size: 15px;
+    }
+    
+}
